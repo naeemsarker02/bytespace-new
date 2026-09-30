@@ -67,7 +67,7 @@ export default function AuthForm({ mode }: { mode: AuthMode }) {
                 aria-label={provider.label}
                 className="flex size-[72px] items-center justify-center rounded-float border border-shuttle-200 bg-white transition-colors hover:bg-shuttle-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-persian-800"
               >
-                <Image src={assets.icons[provider.id]} alt="" width={32} height={32} />
+                <Image src={assets.icons[provider.id]} alt="" width={40} height={40} />
               </button>
             ))}
           </div>

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useMemo, useState } from "react";
 import CourseCard from "@/components/cards/CourseCard";
 import Chip from "@/components/ui/Chip";
@@ -9,7 +8,6 @@ import FilterToolbar from "@/components/ui/FilterToolbar";
 import GridBackdrop from "@/components/ui/GridBackdrop";
 import Icon from "@/components/ui/icons";
 import Pagination from "@/components/ui/Pagination";
-import { assets } from "@/data/assets";
 import { catalog, searchChips, searchPageSize } from "@/data/catalog";
 
 // Client Component: it owns the search text, the active chip and the current page.
@@ -39,7 +37,7 @@ export default function CourseBrowser() {
           <form role="search" onSubmit={(event) => event.preventDefault()} className="flex w-full flex-col gap-4 sm:flex-row">
             <label className="flex h-[52px] flex-1 items-center gap-2 rounded-card bg-white px-6 py-3 focus-within:outline-2 focus-within:outline-electric-400">
               <span className="sr-only">Search courses</span>
-              <Image src={assets.icons.search} alt="" width={24} height={24} />
+              <Icon name="search" className="shrink-0 text-shuttle-500" />
               <input
                 type="search"
                 name="q"

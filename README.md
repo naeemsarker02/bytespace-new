@@ -1,37 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ByteSpace
 
-## Getting Started
+Front-end for the ByteSpace online-course platform, built from the Figma design (Home, Search, Course
+About / Lessons / Reviews, Creator Profile, Sign In, Sign Up and 404). There is no backend: all content is
+static sample data in `src/data`.
 
-First, run the development server:
+**Stack:** Next.js (App Router), React, TypeScript, Tailwind CSS v4, ESLint.
+
+## Run it
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # optional, see "Configuration"
+npm run dev                  # http://localhost:3000
+npm run lint
+npm run build && npm start   # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Routes
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Route | Page |
+|---|---|
+| `/` | Home (landing page) |
+| `/search` | Course search with filters, chips and pagination |
+| `/courses/[slug]` | Course details (About tab) |
+| `/courses/[slug]/lessons` | Course lessons tab |
+| `/courses/[slug]/reviews` | Course reviews tab |
+| `/creators/[slug]` | Creator profile |
+| `/login`, `/register` | Sign in and sign up (front-end validation only) |
+| any other URL | 404 page (`src/app/not-found.tsx`) |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```text
+src/
+  app/            routes, layouts, global styles and design tokens (globals.css)
+  components/
+    ui/           small reusable pieces (Button, Chip, Rating, Icon, Pagination, ...)
+    layout/       Navbar, Footer, Logo
+    cards/        CourseCard, TestimonialCard, floating info cards
+    sections/     Home page sections
+    course/       course pages (header, sidebar, tabs, reviews, lessons)
+    creator/      creator profile
+    search/       search page
+    auth/         sign in / sign up
+  data/           all sample content and the central image map (assets.ts)
+  config/         site-wide settings (site.ts, reads .env)
+  lib/            tiny helpers (cn, validation)
+  types/          shared TypeScript types
+public/           images and icons exported from Figma
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Configuration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Environment values live in one place: `src/config/site.ts`. The only variable is `NEXT_PUBLIC_SITE_URL`
+(see `.env.example`); nothing secret is needed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Design decisions
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# bytespace-new
+- **Figma is desktop only (1440 px).** The full Figma layout is used from the `xl` breakpoint (1280 px) up. Below
+  that the layouts stack, decorative floating cards and 3D shapes are hidden and the menu becomes a hamburger. Those
+  mobile and tablet layouts are our own decisions, not part of the Figma file.
+- **Server Components by default.** Only pieces that need state are Client Components: Navbar (mobile menu),
+  category chips, search page, review filter, tabs, share and follow buttons, auth form.
+- **Data-driven UI.** Repeated blocks (course cards, chips, reviews, modules, footer links...) are rendered from
+  arrays in `src/data`.
+- **Images** use `next/image`. Every image path is listed in `src/data/assets.ts`.
+- **No video player.** The course preview is a still picture, as in the design.

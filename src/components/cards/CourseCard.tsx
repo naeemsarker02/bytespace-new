@@ -7,10 +7,11 @@ import type { Course } from "@/types";
 
 interface CourseCardProps {
   course: Course;
+  variant?: "default" | "showcase"; // showcase = lime star and dark "+26" badge (auth pages)
 }
 
 // Course_Card_1 in Figma: 373 x 384, radius 24, 1px border, 15px inner padding.
-export default function CourseCard({ course }: CourseCardProps) {
+export default function CourseCard({ course, variant = "default" }: CourseCardProps) {
   return (
     <article className="relative h-[384px] w-[373px] max-w-full overflow-hidden rounded-card border border-shuttle-200 bg-white p-[15px]">
       <div className="relative h-[195px] overflow-hidden rounded-image bg-shuttle-200">
@@ -47,7 +48,10 @@ export default function CourseCard({ course }: CourseCardProps) {
             <Image src={assets.icons.signal} alt="" width={20} height={20} />
             {course.level}
           </span>
-          <AvatarStack avatars={course.avatars} size={32} overlap={8} extra={course.enrolled} extraClassName="text-xs font-medium" />
+          <AvatarStack avatars={course.avatars} size={32} overlap={8} extra={course.enrolled}
+            extraClassName="text-xs font-medium"
+            extraTone={variant === "showcase" ? "dark" : "lime"}
+          />
         </div>
 
         <p className="flex items-end">
@@ -57,7 +61,7 @@ export default function CourseCard({ course }: CourseCardProps) {
       </div>
 
       <div className="absolute top-[231px] right-[14px]">
-        <Rating value={course.rating} />
+        <Rating value={course.rating} starClassName={variant === "showcase" ? "text-electric-400" : undefined} />
       </div>
     </article>
   );

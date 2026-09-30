@@ -52,12 +52,12 @@ export default async function CourseLayout({ children, params }: CourseLayoutPro
               <CourseVideo src={course.video} title={course.title} />
             </div>
 
-            <div className="row-start-3 pb-16 xl:col-start-1 xl:pt-[62px]">
+            <div className="row-start-4 pb-16 xl:col-start-1 xl:row-start-3 xl:pt-[62px]">
               <CourseTabs slug={course.slug} />
               <div className="mt-10">{children}</div>
             </div>
 
-            <div className="relative z-10 row-start-4 pb-16 xl:col-start-2 xl:row-start-2 xl:row-end-4 xl:pb-0">
+            <div className="relative z-10 row-start-3 pb-10 xl:col-start-2 xl:row-start-2 xl:row-end-4 xl:pb-0">
               <CourseSidebar course={course} />
             </div>
           </div>

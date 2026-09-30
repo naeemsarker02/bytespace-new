@@ -6,10 +6,11 @@ interface AvatarStackProps {
   overlap: number; // how many px each avatar overlaps the previous one
   extra?: string; // text inside the trailing lime circle, e.g. "26+"
   extraClassName?: string;
+  extraTone?: "lime" | "dark"; // background of the "+N" circle
 }
 
 // Overlapping round avatars followed by a lime "+N" circle.
-export default function AvatarStack({ avatars, size, overlap, extra, extraClassName }: AvatarStackProps) {
+export default function AvatarStack({ avatars, size, overlap, extra, extraClassName, extraTone = "lime" }: AvatarStackProps) {
   return (
     <div className="flex items-center">
       {avatars.map((src) => (
@@ -23,7 +24,7 @@ export default function AvatarStack({ avatars, size, overlap, extra, extraClassN
       ))}
       {extra && (
         <span
-          className={`relative flex shrink-0 items-center justify-center rounded-full bg-electric-400 text-shuttle-950 ${extraClassName ?? ""}`}
+          className={`relative flex shrink-0 items-center justify-center rounded-full ${extraTone === "lime" ? "bg-electric-400 text-shuttle-950" : "bg-shuttle-950 text-white"} ${extraClassName ?? ""}`}
           style={{ width: size, height: size }}
         >
           {extra}
