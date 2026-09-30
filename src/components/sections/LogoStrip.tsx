@@ -9,7 +9,7 @@ export default function LogoStrip() {
         <ul className="flex flex-wrap items-end justify-center gap-x-[72px] gap-y-8">
           {partners.map((partner) => (
             <li key={partner.id}>
-              <Image src={partner.logo} alt={partner.name} width={168} height={41} />
+              <Image src={partner.logo} alt={partner.name} width={168} height={41} className="h-[41px] w-auto" />
             </li>
           ))}
         </ul>

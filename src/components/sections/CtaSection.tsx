@@ -9,10 +9,9 @@ export default function CtaSection() {
       <Image
         src={assets.cta.ornaments}
         alt=""
-        width={1714}
-        height={803}
-        className="pointer-events-none absolute top-[-162px] left-1/2 hidden h-[803px] w-[1714px] max-w-none -translate-x-1/2 xl:block"
-        style={{ marginLeft: 19 }}
+        width={1440}
+        height={488}
+        className="pointer-events-none absolute top-0 left-1/2 hidden h-[488px] w-[1440px] max-w-none -translate-x-1/2 xl:block"
       />
       <div className="relative z-10 mx-auto flex max-w-[964px] flex-col items-center gap-10 text-center xl:h-full xl:justify-center">
         <h2 className="max-w-[710px] font-heading text-3xl leading-[1.2] font-semibold tracking-[-0.44px] text-shuttle-50 md:text-[44px]">

@@ -6,12 +6,13 @@ import { cn } from "@/lib/cn";
 
 interface HappyStudentsCardProps {
   className?: string;
+  variant?: "white" | "lime";
 }
 
 // Shown in the hero and in the "Create & Manage Courses" section.
-export default function HappyStudentsCard({ className }: HappyStudentsCardProps) {
+export default function HappyStudentsCard({ className, variant = "white" }: HappyStudentsCardProps) {
   return (
-    <FloatingCard className={cn("w-[258px] flex-col justify-center gap-2", className)}>
+    <FloatingCard variant={variant} className={cn("w-[258px] flex-col justify-center gap-2", className)}>
       <div>
         <p className="text-base leading-[1.2] font-medium text-shuttle-950">Happy Students</p>
         <p className="flex items-center text-xs leading-[1.6] text-shuttle-400">

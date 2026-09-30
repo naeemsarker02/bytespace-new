@@ -14,6 +14,7 @@ import { cn } from "@/lib/cn";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
 
   return (
     <header className="absolute inset-x-0 top-0 z-30">
@@ -27,10 +28,10 @@ export default function Navbar() {
               <Link
                 key={item.label}
                 href={item.href}
-                aria-current={item.href === pathname ? "page" : undefined}
+                aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
                   "text-base text-shuttle-50 hover:underline",
-                  item.href === pathname ? "leading-[1.2] font-medium" : "leading-[1.6]",
+                  isActive(item.href) ? "leading-[1.2] font-medium" : "leading-[1.6]",
                 )}
               >
                 {item.label}

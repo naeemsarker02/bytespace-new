@@ -3,7 +3,7 @@ import { cn } from "@/lib/cn";
 
 interface FloatingCardProps {
   children: ReactNode;
-  variant?: "white" | "blue";
+  variant?: "white" | "blue" | "lime";
   className?: string;
 }
 
@@ -13,7 +13,9 @@ export default function FloatingCard({ children, variant = "white", className }:
     <div
       className={cn(
         "rounded-float p-4 backdrop-blur-[10px]",
-        variant === "white" ? "bg-white" : "bg-persian-800 text-shuttle-50",
+        variant === "white" && "bg-white",
+        variant === "blue" && "bg-persian-800 text-shuttle-50",
+        variant === "lime" && "bg-electric-400",
         className,
       )}
     >

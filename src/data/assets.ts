@@ -9,6 +9,8 @@ export const assets = {
     star: "/icons/star.svg",
     check: "/icons/check-circle.svg",
     signal: "/icons/signal.svg",
+    facebook: "/icons/facebook.svg",
+    google: "/icons/google.svg",
   },
   backgrounds: {
     grid: "/images/backgrounds/grid.svg",
@@ -59,6 +61,29 @@ export const assets = {
     "/images/partners/partner-3.svg",
     "/images/partners/partner-4.svg",
     "/images/partners/partner-5.svg",
+  ],
+  // 3D shapes around the sign in / sign up illustration.
+  auth: {
+    torus: "/images/auth/torus.png",
+    pyramid: "/images/auth/pyramid.png",
+    spring: "/images/auth/spring.png",
+  },
+  // Course details, lessons and reviews pages.
+  course: {
+    video: "/images/course/video-thumbnail.png",
+    sneakPeek: [
+      "/images/course/sneak-peek-1.png",
+      "/images/course/sneak-peek-2.png",
+      "/images/course/sneak-peek-3.png",
+      "/images/course/sneak-peek-4.png",
+    ],
+  },
+  creatorAvatar: "/images/creators/purepearl.png",
+  reviewerAvatars: [
+    "/images/avatars/reviewer-1.png",
+    "/images/avatars/reviewer-2.png",
+    "/images/avatars/reviewer-3.png",
+    "/images/avatars/reviewer-4.png",
   ],
   categoryIcons: {
     design: "/icons/categories/design.svg",
