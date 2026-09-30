@@ -67,7 +67,7 @@ export default function CourseBrowser() {
       <section className="bg-white pt-10 pb-16 xl:pt-[72px] xl:pb-[72px]">
         <Container>
           <FilterToolbar />
-          <div className="mt-8 flex flex-wrap gap-4" role="group" aria-label="Course categories">
+          <div className="mt-8 flex flex-wrap justify-center gap-4 xl:justify-start" role="group" aria-label="Course categories">
             {searchChips.map((label) => (
               <Chip key={label} label={label} active={label === activeChip} onClick={() => setActiveChip(label)} />
             ))}

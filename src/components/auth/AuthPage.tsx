@@ -14,12 +14,12 @@ export default function AuthPage({ mode }: { mode: AuthMode }) {
   return (
     <main className="relative overflow-hidden bg-persian-800 px-5 py-8 md:px-8 xl:min-h-[1024px] xl:px-0 xl:py-0">
       <GridBackdrop />
-      <div className="relative mx-auto flex max-w-[1200px] flex-col gap-10 xl:block xl:h-[1024px]">
+      <div className="relative mx-auto flex max-w-[1200px] flex-col items-center gap-10 xl:block xl:h-[1024px]">
         <Link href="/" aria-label="ByteSpace home" className="w-fit xl:absolute xl:top-[35px] xl:left-0">
           <Image src={assets.logoMark} alt="" width={29} height={32} priority />
         </Link>
 
-        <div className="max-w-[520px] xl:absolute xl:top-[120px] xl:left-0">
+        <div className="max-w-[520px] text-center xl:absolute xl:top-[120px] xl:left-0 xl:text-left">
           <h2 className="font-heading text-2xl leading-[1.3] font-semibold text-white">{side.title}</h2>
           <p className="mt-6 text-lg leading-[1.6] text-shuttle-50 xl:text-xl">{side.text}</p>
         </div>
