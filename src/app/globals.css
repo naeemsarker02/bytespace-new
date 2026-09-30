@@ -69,12 +69,15 @@
 }
 
 /*
- * Fonts. The --font-* variables on the right are set by next/font in layout.tsx.
- * "inline" makes Tailwind reference them directly instead of copying the value.
+ * Fonts. The --font-poppins / --font-satoshi / --font-clash variables are set by
+ * next/font in layout.tsx. The second value inside var() is a fallback, so the page
+ * still has a valid font stack while a font file has not been added yet.
+ * "inline" makes Tailwind reference the variables directly instead of copying the value.
  */
 @theme inline {
-  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-satoshi, ui-sans-serif), ui-sans-serif, system-ui, sans-serif;
+  --font-logo: var(--font-clash, var(--font-poppins, ui-sans-serif)), ui-sans-serif, sans-serif;
 }
 
 body {
