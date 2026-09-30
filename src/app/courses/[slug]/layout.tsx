@@ -52,7 +52,7 @@ export default async function CourseLayout({ children, params }: CourseLayoutPro
               <CourseVideo src={course.video} title={course.title} />
             </div>
 
-            <div className="row-start-4 pb-16 xl:col-start-1 xl:row-start-3 xl:pt-[62px]">
+            <div className="mx-auto w-full max-w-[725px] row-start-4 pb-16 xl:mx-0 xl:col-start-1 xl:row-start-3 xl:pt-[62px]">
               <CourseTabs slug={course.slug} />
               <div className="mt-10">{children}</div>
             </div>

@@ -14,7 +14,7 @@ export default function CourseSidebar({ course }: CourseSidebarProps) {
   return (
     <aside
       aria-label="Enroll in this course"
-      className="w-full rounded-card border border-shuttle-200 bg-white p-6 shadow-sm sm:p-10 xl:w-[412px]"
+      className="mx-auto w-full max-w-[412px] rounded-card border border-shuttle-200 bg-white p-6 shadow-sm sm:p-10 xl:mx-0 xl:w-[412px]"
     >
       <h2 className="font-heading text-xl leading-[1.2] font-semibold text-shuttle-950">
         {course.lessonCount} Lessons ({course.hours} hours)
@@ -59,7 +59,7 @@ export default function CourseSidebar({ course }: CourseSidebarProps) {
         </div>
       </div>
       <p className="mt-6 text-base leading-[1.6] text-shuttle-500">{course.pitch}</p>
-      <Button variant="outline" size="xs" href={`/creators/${creator.slug}`} className="mt-6">
+      <Button variant="outline" size="xs" href={`/creators/${creator.slug}`} className="mt-6 w-full xl:w-auto">
         See Full Profile
       </Button>
     </aside>
