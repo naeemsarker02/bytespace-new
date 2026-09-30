@@ -18,7 +18,7 @@ export default function CourseTabs({ slug }: { slug: string }) {
 
   return (
     <nav aria-label="Course sections">
-      <ul className="flex flex-wrap gap-4">
+      <ul className="flex flex-wrap justify-center gap-4 xl:justify-start">
         {tabs.map((tab) => {
           const href = `${base}${tab.path}`;
           const active = pathname === href;

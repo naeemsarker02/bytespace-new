@@ -52,7 +52,7 @@ export default function CreatorRow() {
         />
       </div>
 
-      <div className="flex w-full max-w-[580px] flex-col gap-10">
+      <div className="flex w-full max-w-[580px] flex-col items-center gap-10 text-center xl:items-start xl:text-left">
         <h2 className="max-w-[391px] font-heading text-3xl leading-[1.2] font-semibold tracking-[-0.44px] text-shuttle-950 md:text-[44px]">
           Create &amp; Manage Courses Easily.
         </h2>
@@ -60,7 +60,7 @@ export default function CreatorRow() {
           <strong className="font-bold text-shuttle-950">ByteSpace</strong> supports individuals or entities in the
           creation, publication, and administration of educational courses.
         </p>
-        <ul className="flex flex-col gap-4">
+        <ul className="flex flex-col items-start gap-4 text-left">
           {creatorBenefits.map((benefit) => (
             <li key={benefit} className="flex items-center gap-2 text-lg leading-[1.2] font-medium text-shuttle-950">
               <Image src={assets.icons.check} alt="" width={24} height={24} />

@@ -16,7 +16,7 @@ export default function CourseHeader({ course }: CourseHeaderProps) {
   ] as const;
 
   return (
-    <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between min-[1440px]:-mr-[83px]">
+    <div className="flex flex-col items-center gap-6 text-center xl:flex-row xl:items-start xl:justify-between xl:text-left min-[1440px]:-mr-[83px]">
       <div>
         <h1 className="font-heading text-3xl leading-[1.2] font-semibold tracking-[-0.36px] text-white md:text-4xl">
           {course.title}
@@ -28,7 +28,7 @@ export default function CourseHeader({ course }: CourseHeaderProps) {
             {course.author}
           </Link>
         </p>
-        <ul className="mt-6 flex flex-wrap gap-4">
+        <ul className="mt-6 flex flex-wrap justify-center gap-4 xl:justify-start">
           {pills.map((pill) => (
             <li
               key={pill.icon}

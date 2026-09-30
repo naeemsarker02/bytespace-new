@@ -16,7 +16,7 @@ export default function ReviewList() {
 
   return (
     <div>
-      <div className="flex flex-wrap gap-4" role="group" aria-label="Filter reviews by rating">
+      <div className="flex flex-wrap justify-center gap-4 xl:justify-start" role="group" aria-label="Filter reviews by rating">
         <button
           type="button"
           aria-pressed={stars === null}
@@ -48,7 +48,7 @@ export default function ReviewList() {
           ))}
         </ul>
       ) : (
-        <p className="mt-6 text-base leading-[1.6] text-shuttle-600">No reviews with this rating yet.</p>
+        <p className="mt-6 text-center text-base leading-[1.6] text-shuttle-600 xl:text-left">No reviews with this rating yet.</p>
       )}
     </div>
   );
