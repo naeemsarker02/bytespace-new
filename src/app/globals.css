@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Design tokens taken from the Figma file (Style Guide + Home frame variables).
+ * Tailwind v4 turns each --color-* / --radius-* / --shadow-* / --font-* variable
+ * into utility classes, e.g. bg-persian-800, rounded-card, shadow-hero, font-heading.
+ */
+@theme {
+  /* Shuttle Gray (neutral) */
+  --color-shuttle-50: #f5f5f6;
+  --color-shuttle-100: #e5e6e8;
+  --color-shuttle-200: #ced0d3;
+  --color-shuttle-300: #abaeb5;
+  --color-shuttle-400: #82868e;
+  --color-shuttle-500: #666973;
+  --color-shuttle-600: #585a62;
+  --color-shuttle-700: #4b4c53;
+  --color-shuttle-800: #424348;
+  --color-shuttle-900: #3a3b3f;
+  --color-shuttle-950: #242528;
+
+  /* Persian Blue (primary) - 800 is the brand blue used for hero, CTA, links */
+  --color-persian-50: #e7f6ff;
+  --color-persian-100: #d3eeff;
+  --color-persian-200: #b0ddff;
+  --color-persian-300: #81c5ff;
+  --color-persian-400: #4f9dff;
+  --color-persian-500: #2872ff;
+  --color-persian-600: #0445ff;
+  --color-persian-700: #0043ff;
+  --color-persian-800: #003be2;
+  --color-persian-900: #0b36a4;
+  --color-persian-950: #071e5f;
+
+  /* Electric Lime (secondary) - 400 is the accent used for buttons and active chips */
+  --color-electric-50: #fdffe4;
+  --color-electric-100: #faffc5;
+  --color-electric-200: #f2ff92;
+  --color-electric-300: #e4ff54;
+  --color-electric-400: #d4fb20;
+  --color-electric-500: #cbfc01;
+  --color-electric-600: #8cb400;
+  --color-electric-700: #6a8902;
+  --color-electric-800: #546b09;
+  --color-electric-900: #465a0d;
+  --color-electric-950: #243300;
+
+  /* Extra values used directly in the Home frame (not in the palette) */
+  --color-ink-700: #4f4f4f; /* Figma "Black/700": card meta text, testimonial quotes */
+  --color-surface-alt: #fafafa; /* background of the growth and testimonials sections */
+
+  /* Border radius used in the design */
+  --radius-image: 12px; /* card thumbnails */
+  --radius-float: 16px; /* floating info cards */
+  --radius-card: 24px; /* cards, chips, buttons, search bar */
+  --radius-icon: 40px; /* lime circle behind category icons */
+  --radius-input: 100px; /* footer email input */
+
+  /* 8-layer drop shadow "A" used on the hero and growth images */
+  --shadow-hero:
+    51.038px 72.912px 72px 0 rgb(0 0 0 / 0.13),
+    37.122px 53.032px 56px 0 rgb(0 0 0 / 0.11),
+    25.838px 36.912px 36px 0 rgb(0 0 0 / 0.1),
+    16.946px 24.209px 24px 0 rgb(0 0 0 / 0.09),
+    10.208px 14.582px 16.087px 0 rgb(0 0 0 / 0.08),
+    5.383px 7.69px 9.571px 0 rgb(0 0 0 / 0.07),
+    2.233px 3.19px 5.723px 0 rgb(0 0 0 / 0.06),
+    0.518px 0.741px 3.036px 0 rgb(0 0 0 / 0.04);
 }
 
+/*
+ * Fonts. The --font-* variables on the right are set by next/font in layout.tsx.
+ * "inline" makes Tailwind reference them directly instead of copying the value.
+ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-shuttle-950);
+  font-family: var(--font-body);
 }
