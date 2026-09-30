@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import AvatarStack from "@/components/ui/AvatarStack";
 import Rating from "@/components/ui/Rating";
 import { assets } from "@/data/assets";
@@ -32,7 +33,9 @@ export default function CourseCard({ course }: CourseCardProps) {
             title={course.title}
             className="truncate font-heading text-xl leading-[1.2] font-semibold tracking-[-0.2px] text-black"
           >
-            {course.title}
+            <Link href={`/courses/${course.id}`} className="after:absolute after:inset-0 after:content-['']">
+              {course.title}
+            </Link>
           </h3>
           <p className="text-xs leading-[1.6] text-ink-700">
             by <span className="text-persian-800">{course.author}</span>
