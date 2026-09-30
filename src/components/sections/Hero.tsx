@@ -16,7 +16,7 @@ export default function Hero() {
         src={assets.backgrounds.heroEllipse}
         alt=""
         width={1149}
-        height={1149}
+        height={442}
         className="pointer-events-none absolute top-[582px] left-1/2 hidden max-w-none -translate-x-1/2 xl:block"
       />
 
@@ -46,8 +46,8 @@ export default function Hero() {
       </div>
 
       {/* Illustration */}
-      <div className="relative z-10 mx-auto mt-14 aspect-[578/541] w-full max-w-[578px] px-5 xl:absolute xl:top-[512px] xl:left-1/2 xl:mt-0 xl:-translate-x-1/2 xl:px-0">
-        <Image src={assets.hero.main} alt="Smiling student with headphones holding a laptop" fill priority sizes="578px" className="object-contain" />
+      <div className="relative z-10 mx-auto mt-14 aspect-[1444/1030] w-full max-w-[722px] px-5 xl:absolute xl:top-[509px] xl:left-1/2 xl:mt-0 xl:-translate-x-1/2 xl:px-0">
+        <Image src={assets.hero.main} alt="Smiling student with headphones holding a laptop" fill priority sizes="722px" className="object-contain" />
       </div>
 
       {/* Floating cards and 3D ornaments: desktop only (xl and up) */}
@@ -56,10 +56,9 @@ export default function Hero() {
       <Image
         src={assets.hero.ornaments}
         alt=""
-        width={1719}
-        height={803}
-        className="pointer-events-none absolute top-[221px] left-1/2 z-10 hidden h-[803px] w-[1719px] max-w-none -translate-x-1/2 xl:block"
-        style={{ marginLeft: 21.5 }}
+        width={1440}
+        height={804}
+        className="pointer-events-none absolute top-[221px] left-1/2 z-10 hidden h-[804px] w-[1440px] max-w-none -translate-x-1/2 xl:block"
       />
       <FloatingCard className="absolute top-[639px] left-1/2 z-10 -ml-[316px] hidden xl:block">
         <p className="text-base leading-[1.2] font-medium text-shuttle-950">UI/UX Design</p>
