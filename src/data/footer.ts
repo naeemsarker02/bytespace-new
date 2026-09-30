@@ -11,6 +11,7 @@ export const footerColumns: NavLink[][] = [
   [
     link("Become a Creator", "/register"),
     link("Creators", "/creators/purepearl-studio"),
+    link("Learn Figma", "/courses/learn-figma"),
     link("Find a Course", "/search"),
     link("Sign In", "/login"),
     link("Contact"),
