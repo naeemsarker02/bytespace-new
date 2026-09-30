@@ -31,7 +31,6 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # env files (can opt-in for committing if needed)
-.env*
 !.env.example
 
 # vercel
@@ -43,3 +42,10 @@ next-env.d.ts
 
 # figma exports (working folder, not part of the app)
 /figma-export/
+
+# internal notes, AI prompts and documentation (kept locally, not published)
+/docs/
+CLAUDE.md
+AGENTS.md
+.claude/
+config.bat
