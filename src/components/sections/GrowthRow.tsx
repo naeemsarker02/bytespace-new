@@ -10,18 +10,18 @@ import { stats } from "@/data/home";
 export default function GrowthRow() {
   return (
     <div className="flex flex-col items-center gap-12 xl:flex-row xl:gap-[63px]">
-      <div className="flex w-full max-w-[574px] shrink-0 flex-col gap-10">
+      <div className="flex w-full max-w-[574px] shrink-0 flex-col items-center gap-10 text-center xl:items-start xl:text-left">
         <h2 className="font-heading text-3xl leading-[1.2] font-semibold tracking-[-0.44px] text-shuttle-950 md:text-[44px]">
           Your Path to Professional Growth Starts Here!
         </h2>
-        <p className="max-w-[477px] text-lg leading-[1.6] text-shuttle-700">
+        <p className="mx-auto max-w-[477px] text-lg xl:mx-0 leading-[1.6] text-shuttle-700">
           Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career
           journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new
           career path entirely, we have the resources you need.
         </p>
-        <dl className="flex flex-wrap items-end gap-x-14 gap-y-6">
+        <dl className="flex flex-wrap items-end justify-center gap-x-14 gap-y-6 xl:justify-start">
           {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col-reverse">
+            <div key={stat.label} className="flex flex-col-reverse items-center xl:items-start">
               <dt className="text-lg leading-[1.6] text-shuttle-700">{stat.label}</dt>
               <dd className="font-heading text-4xl leading-[44px] font-medium tracking-[-0.36px] text-persian-800">
                 {stat.value}

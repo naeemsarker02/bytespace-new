@@ -8,8 +8,8 @@ const pill =
 // The design only shows the buttons (no menus), so they do not open anything.
 export default function FilterToolbar() {
   return (
-    <div className="flex flex-wrap items-center justify-between gap-4">
-      <div className="flex flex-wrap gap-4">
+    <div className="flex flex-col items-center gap-4 xl:flex-row xl:justify-between">
+      <div className="flex flex-wrap justify-center gap-4 xl:justify-start">
         {toolbarFilters.map((filter) => (
           <button key={filter.label} type="button" className={pill}>
             <Icon name={filter.icon} />

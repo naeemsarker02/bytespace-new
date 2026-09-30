@@ -3,6 +3,8 @@ import type { ReactNode } from "react";
 // Small icon set (Material-style, 24 x 24). The Figma file uses Material icons, so they are
 // drawn here as inline SVG with currentColor: one Icon component, colored with text-* classes.
 const filled = {
+  search:
+    "M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z",
   star: "M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z",
   level: "M17 4h3v16h-3V4zM5 14h3v6H5v-6zm6-5h3v11h-3V9z",
   users:

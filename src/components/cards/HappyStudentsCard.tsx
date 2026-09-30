@@ -1,6 +1,6 @@
-import Image from "next/image";
 import AvatarStack from "@/components/ui/AvatarStack";
 import FloatingCard from "@/components/ui/FloatingCard";
+import Icon from "@/components/ui/icons";
 import { assets } from "@/data/assets";
 import { cn } from "@/lib/cn";
 
@@ -18,10 +18,17 @@ export default function HappyStudentsCard({ className, variant = "white" }: Happ
         <p className="flex items-center text-xs leading-[1.6] text-shuttle-400">
           <span className="text-shuttle-950">4.5&nbsp;</span>
           (240)
-          <Image src={assets.icons.star} alt="" width={16} height={16} />
+          <Icon name="star" size={16} className="text-persian-800" />
         </p>
       </div>
-      <AvatarStack avatars={assets.studentAvatars} size={43} overlap={16} extra="2K+" extraClassName="text-xs font-bold" />
+      <AvatarStack
+        avatars={assets.studentAvatars}
+        size={43}
+        overlap={16}
+        extra="2K+"
+        extraClassName="text-xs font-bold"
+        extraTone={variant === "lime" ? "dark" : "lime"}
+      />
     </FloatingCard>
   );
 }

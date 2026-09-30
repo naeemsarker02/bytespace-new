@@ -4,9 +4,7 @@
 export const assets = {
   logoMark: "/icons/logo-mark.svg",
   icons: {
-    search: "/icons/search.svg",
     bag: "/icons/bag.svg",
-    star: "/icons/star.svg",
     check: "/icons/check-circle.svg",
     signal: "/icons/signal.svg",
     facebook: "/icons/facebook.svg",

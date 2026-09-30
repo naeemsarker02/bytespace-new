@@ -2,6 +2,7 @@ import Image from "next/image";
 import HappyStudentsCard from "@/components/cards/HappyStudentsCard";
 import LearningProgressCard from "@/components/cards/LearningProgressCard";
 import Button from "@/components/ui/Button";
+import Icon from "@/components/ui/icons";
 import FloatingCard from "@/components/ui/FloatingCard";
 import { assets } from "@/data/assets";
 
@@ -33,7 +34,7 @@ export default function Hero() {
         <form role="search" action="#" className="flex w-full max-w-[621px] flex-col gap-4 sm:flex-row">
           <label className="flex h-[52px] flex-1 items-center gap-2 rounded-card bg-white px-6 py-3 focus-within:outline-2 focus-within:outline-electric-400 sm:w-[461px] sm:flex-none">
             <span className="sr-only">Search courses</span>
-            <Image src={assets.icons.search} alt="" width={24} height={24} />
+            <Icon name="search" className="shrink-0 text-shuttle-500" />
             <input
               type="search"
               name="q"
