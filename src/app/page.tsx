@@ -1,19 +1,28 @@
-// TEMPORARY token check page - replaced by the real landing page in the next milestone.
+import Footer from "@/components/layout/Footer";
+import Navbar from "@/components/layout/Navbar";
+import CategoriesSection from "@/components/sections/CategoriesSection";
+import CoursesSection from "@/components/sections/CoursesSection";
+import CtaSection from "@/components/sections/CtaSection";
+import FeaturesSection from "@/components/sections/FeaturesSection";
+import Hero from "@/components/sections/Hero";
+import LogoStrip from "@/components/sections/LogoStrip";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
+
+// The landing page is just the sections stacked in the same order as the Figma Home frame.
 export default function Home() {
   return (
-    <main className="mx-auto max-w-[1200px] space-y-8 p-10">
-      <h1 className="font-heading text-[44px] leading-[1.2] font-semibold tracking-[-0.44px] text-shuttle-950">
-        ByteSpace design tokens
-      </h1>
-      <p className="text-lg leading-[1.6] text-shuttle-700">
-        Body text uses the body font stack (Satoshi once the font files are added).
-      </p>
-      <div className="flex gap-4">
-        <div className="h-20 w-40 rounded-card bg-persian-800" />
-        <div className="h-20 w-40 rounded-card bg-electric-400" />
-        <div className="h-20 w-40 rounded-card bg-shuttle-100" />
-        <div className="h-20 w-40 rounded-float bg-surface-alt shadow-hero" />
-      </div>
-    </main>
+    <>
+      <Navbar />
+      <main>
+        <Hero />
+        <LogoStrip />
+        <CoursesSection />
+        <CategoriesSection />
+        <FeaturesSection />
+        <CtaSection />
+        <TestimonialsSection />
+      </main>
+      <Footer />
+    </>
   );
 }
