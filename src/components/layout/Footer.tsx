@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Button from "@/components/ui/Button";
 import Logo from "@/components/layout/Logo";
@@ -40,9 +41,9 @@ export default function Footer() {
               <ul key={column[0].label} className="flex flex-col items-center gap-4 text-sm leading-[1.6] text-shuttle-950 lg:items-start">
                 {column.map((item) => (
                   <li key={item.label}>
-                    <a href={item.href} className="hover:underline">
+                    <Link href={item.href} className="hover:underline">
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

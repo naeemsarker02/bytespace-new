@@ -1,12 +1,20 @@
+import { courses } from "@/data/courses";
 import type { NavLink } from "@/types";
 
-const link = (label: string): NavLink => ({ label, href: "#" });
+const link = (label: string, href = "#"): NavLink => ({ label, href });
 
-// Three link columns, as in the design (targets are not defined in Figma).
+// Column 1 is built from the course data, so a new course shows up here automatically.
+// The Figma design defines no link targets, so these routes are our own decision.
 export const footerColumns: NavLink[][] = [
-  ["Featured Courses", "Featured Categories", "Business", "IT", "Design"].map(link),
-  ["Development", "Marketing", "Photography", "Finance", "Sport"].map(link),
-  ["Become a Creator", "Affiliate Program", "Contact", "Help", "About"].map(link),
+  courses.map((course) => link(course.title, `/courses/${course.id}`)),
+  ["Business", "IT", "Design", "Development", "Marketing", "Photography"].map((label) => link(label, "/search")),
+  [
+    link("Become a Creator", "/register"),
+    link("Creators", "/creators/purepearl-studio"),
+    link("Find a Course", "/search"),
+    link("Sign In", "/login"),
+    link("Contact"),
+  ],
 ];
 
-export const legalLinks: NavLink[] = ["Privacy Policy", "Terms of Service", "Cookies Settings"].map(link);
+export const legalLinks: NavLink[] = ["Privacy Policy", "Terms of Service", "Cookies Settings"].map((label) => link(label));
